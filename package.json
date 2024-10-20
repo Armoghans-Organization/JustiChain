@@ -1,0 +1,58 @@
+{
+  "name": "justichain",
+  "version": "1.0.0",
+  "description": "A secure web platform for anonymous crime reporting and tamper-proof evidence management, bridging trust between communities and law enforcement.",
+  "main": "app.py",
+  "private": true,
+  "scripts": {
+    "postinstall": "echo '📦 Installing dependencies' pip install -r requirements.txt",
+    "start": "echo '🚀 Starting Flask server' &&  flask run",
+    "dev": "echo '🚀 Starting Flask development server' && flask run --debug --reload",
+    "audit": "echo '🔍 Running npm audit' && npm audit",
+    "audit:fix": "echo '🛠️ Running npm audit and fixing issues' && npm audit --fix",
+    "update": "echo '🔄 Updating npm packages' && npm update",
+    "depcheck": "echo '🧐 Checking for unused dependencies' && npx depcheck",
+    "cache-clean": "echo '🧹 Cleaning npm cache' && npm cache clean --force",
+    "rebuild-node-modules": "echo '🔨 Rebuilding node_modules' && rm -rf node_modules && npm install"
+  },
+  "keywords": [
+    "JustiChain",
+    "Crime Reporting",
+    "Evidence Management",
+    "Anonymous Reporting",
+    "Tamper-Proof Evidence",
+    "Cryptographic Hashing",
+    "Law Enforcement",
+    "Secure Platform",
+    "Justice"
+  ],
+  "browserslist": [
+    ">0.1%",
+    "last 2 versions",
+    "not dead",
+    "IE 11",
+    "Edge >= 12",
+    "Firefox >= 28",
+    "Chrome >= 28",
+    "Safari >= 7",
+    "Opera >= 23",
+    "iOS >= 7",
+    "Android >= 4",
+    "not op_mini all"
+  ],
+  "engines": {
+    "node": ">=20.15.1",
+    "npm": ">=10.8.0",
+    "python": ">=3.12.7"
+  },
+  "author": "Armoghan-ul-Mohmin",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Armoghans-Organization/JustiChain.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Armoghans-Organization/JustiChain/issues"
+  },
+  "homepage": "https://github.com/Armoghans-Organization/JustiChain#readme"
+}

@@ -11,6 +11,9 @@
 	// * Name of the development container
 	"name": "JustiChain Development",
 
+	// ** Custom name for the container
+	"containerName": "JustiChain Development",
+
 	// ** Base Image
 	"image": "mcr.microsoft.com/devcontainers/base:alpine",
 	
@@ -85,7 +88,7 @@
 	"remoteUser": "root",
 	
 	// ** Commands to run after the container is created
-	"postCreateCommand": "apk add --no-cache python3 py3-pip nodejs npm  && npm install",
+	"postCreateCommand": "apk add --no-cache python3 py3-pip nodejs npm && npm install",
 	
 	// ** Environment variables for the container
 	"environment": {
