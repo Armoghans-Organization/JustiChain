@@ -13,7 +13,9 @@
     "update": "echo '🔄 Updating npm packages' && npm update",
     "depcheck": "echo '🧐 Checking for unused dependencies' && npx depcheck",
     "cache-clean": "echo '🧹 Cleaning npm cache' && npm cache clean --force",
-    "rebuild-node-modules": "echo '🔨 Rebuilding node_modules' && rm -rf node_modules && npm install"
+    "rebuild-node-modules": "echo '🔨 Rebuilding node_modules' && rm -rf node_modules && npm install",
+    "commit": "clear && echo '💾 Running commitizen' && cz",
+    "prepare": "echo '🎬 Preparing Husky' && husky"
   },
   "keywords": [
     "JustiChain",
@@ -41,9 +43,24 @@
     "not op_mini all"
   ],
   "engines": {
-    "node": ">=20.15.1",
-    "npm": ">=10.8.0",
-    "python": ">=3.12.7"
+    "node": ">=18.20.1",
+    "npm": ">=9.2.0",
+    "python": ">=3.11.9"
+  },
+  "husky": {
+    "hooks": {
+      "prepare-commit-msg": "npx cz --hook || true"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "devDependencies": {
+    "commitizen": "^4.3.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.1.6"
   },
   "author": "Armoghan-ul-Mohmin",
   "license": "MIT",
