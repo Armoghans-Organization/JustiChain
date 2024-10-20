@@ -1,0 +1,23 @@
+# Dependency Review Action 🔍
+
+name: "Dependency Review 🔍"
+on:
+  push:
+    branches: ["*"] # 🏠 All branches
+  pull_request:
+    branches: ["*"] # 🏠 All branches
+
+permissions:
+  contents: read # 📦 Read access to repository contents
+  pull-requests: write # ✏️ Write access to pull requests
+
+jobs:
+  dependency-review:
+    runs-on: ubuntu-latest # 🖥️ Runner environment
+    steps:
+      - name: "Checkout Repository 🚀"
+        uses: actions/checkout@v4 # 🔄 Checkout code
+      - name: "Dependency Review 🛡️"
+        uses: actions/dependency-review-action@v4 # 🔍 Review dependencies
+        with:
+          comment-summary-in-pr: always # 💬 Comment on PRs with a summary

@@ -1,0 +1,39 @@
+name: Security Scans 🔒
+
+on:
+  push:
+    branches: ["*"] # 📦 On any push to any branch
+  pull_request:
+    branches: ["*"] # 📥 On any pull request to any branch
+
+jobs:
+  security:
+    runs-on: ubuntu-latest # 🖥️ Using the latest Ubuntu environment
+
+    steps:
+      - name: Checkout code 🚀
+        uses: actions/checkout@v4
+
+      - name: Set up Python 🐍
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9" # 🛠️ Specify Python version
+
+      - name: Install dependencies 📦
+        run: |
+          pip install -r requirements.txt
+          pip install bandit
+
+      - name: Run Bandit for security scan 🕵️‍♂️
+        run: bandit -r . # 🔍 Scanning the entire project
+
+      - name: Set up Node.js 🌐
+        uses: actions/setup-node@v4
+        with:
+          node-version: "14" # 🛠️ Specify Node.js version
+
+      - name: Install npm dependencies 📦
+        run: npm install
+
+      - name: Run npm audit for security scan 🔍
+        run: npm audit # 🔒 Scanning for vulnerabilities in npm packages

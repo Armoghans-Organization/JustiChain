@@ -12,24 +12,7 @@
 	"name": "JustiChain Development",
 
 	// ** Base Image
-	"image": "alpine:latest",
-	
-	// ** Features to add to the dev container
-	"features": {
-		// ** Git Feature for version control
-		"ghcr.io/devcontainers/features/git:1": {
-			"ppa": true,
-			"version": "latest"
-		},
-		// ** Node.js Feature for JavaScript and npm support
-		"ghcr.io/devcontainers/features/node:1": {
-			"version": "latest"
-		},
-		// ** Python Feature for Flask
-		"ghcr.io/devcontainers/features/python:3": {
-			"version": "latest"
-		}
-	},
+	"image": "mcr.microsoft.com/devcontainers/base:alpine",
 	
 	// ** Custom VS Code extensions
 	"customizations": {
@@ -102,7 +85,7 @@
 	"remoteUser": "root",
 	
 	// ** Commands to run after the container is created
-	"postCreateCommand": "npm install",
+	"postCreateCommand": "apk add --no-cache python3 py3-pip nodejs npm  && npm install",
 	
 	// ** Environment variables for the container
 	"environment": {
