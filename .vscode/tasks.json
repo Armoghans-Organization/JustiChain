@@ -1,0 +1,105 @@
+// **************************************
+// * Tasks Configuration                *
+// * Project: JustiChain                *
+// * Description: This configuration    *
+// * defines a series of tasks for      *
+// * managing and building the project. *
+// * It includes tasks for running the  *
+// * Flask server, managing NPM tasks,  *
+// * auditing dependencies, and cache   *
+// * management.                        *
+// **************************************
+
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Run Flask App",
+            "type": "shell",
+            "command": "npm start",
+            "problemMatcher": [],
+            "group": {
+                "kind": "serve",
+                "isDefault": true
+            },
+            "isBackground": false
+        },
+        {
+            "label": "Run Flask App in Debug Mode",
+            "type": "shell",
+            "command": "npm run dev",
+            "problemMatcher": [],
+            "group": {
+                "kind": "serve",
+                "isDefault": false
+            },
+            "isBackground": false
+        },
+        {
+            "label": "Audit Dependencies",
+            "type": "shell",
+            "command": "npm audit",
+            "problemMatcher": [],
+            "group": {
+                "kind": "check",
+                "isDefault": true
+            },
+            "isBackground": false
+        },
+        {
+            "label": "Audit Dependencies and Fix",
+            "type": "shell",
+            "command": "npm audit --fix",
+            "problemMatcher": [],
+            "group": {
+                "kind": "check",
+                "isDefault": false
+            },
+            "isBackground": false
+        },
+        {
+            "label": "Update Dependencies",
+            "type": "shell",
+            "command": "npm update",
+            "problemMatcher": [],
+            "group": {
+                "kind": "setup",
+                "isDefault": false
+            },
+            "isBackground": false
+        },
+        {
+            "label": "Check for Unused Dependencies",
+            "type": "shell",
+            "command": "npx depcheck",
+            "problemMatcher": [],
+            "group": {
+                "kind": "check",
+                "isDefault": false
+            },
+            "isBackground": false
+        },
+        {
+            "label": "Clean NPM Cache",
+            "type": "shell",
+            "command": "npm cache clean --force",
+            "problemMatcher": [],
+            "group": {
+                "kind": "cleanup",
+                "isDefault": true
+            },
+            "isBackground": false
+        },
+        {
+            "label": "Rebuild Node Modules",
+            "type": "shell",
+            "command": "rm -rf node_modules && npm install",
+            "problemMatcher": [],
+            "group": {
+                "kind": "setup",
+                "isDefault": false
+            },
+            "isBackground": false
+        }
+    ]
+}

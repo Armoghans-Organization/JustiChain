@@ -1,0 +1,87 @@
+{
+    // **************************************
+    // * VS Code Settings Configuration     *
+    // * Project: JustiChain                *
+    // * Description: Configuration for     *
+    // * optimizing the development         *
+    // * environment for Flask websites.    *
+    // **************************************
+
+    // **************************************
+    // * General Editor Settings            *
+    // **************************************
+    
+    // Auto-save when the window loses focus
+    "files.autoSave": "onWindowChange",
+    // Delay before auto-saving files
+    "files.autoSaveDelay": 1000,
+    // Disable format on save
+    "editor.formatOnSave": false,
+    // Wrap lines at viewport width
+    "editor.wordWrap": "on",
+    // Enable code lens and hover features
+    "editor.codeLens": true,
+    "editor.hover.enabled": true,
+    
+    // **************************************
+    // * Appearance Settings                *
+    // **************************************
+    
+    // Disable minimap for a cleaner UI
+    "editor.minimap.enabled": false,
+    // Set color theme
+    "workbench.colorTheme": "Shades of Purple",
+    // Enable bracket pair colorization for better readability
+    "editor.bracketPairColorization.enabled": true,
+    
+    // **************************************
+    // * Code Behavior Settings             *
+    // **************************************
+    
+    // Line endings configuration for WSL
+    "files.eol": "\n",
+    // File encoding configuration
+    "files.encoding": "utf8",
+    // Enable auto-closing brackets and tags
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingTags": true,
+    // Enable quick suggestions in editor
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": true,
+        "strings": true
+    },
+    
+    // **************************************
+    // * Exclusion Settings                 *
+    // **************************************
+    
+    // ** File Exclusion for Workspace
+    "files.exclude": {
+        "**/.git": true,
+        "**/.github": true,
+        "**/.gitignore": true,
+        "**/node_modules": true,
+        "**/.vscode": true,
+        "**/.husky": true,
+        "**/LICENSE": true,
+        "**/.devcontainer": true,
+        "**/package-lock.json": true
+    },
+    
+    // ** File Exclusion for Search
+    "search.exclude": {
+        "**/.git": true,
+        "**/node_modules": true,
+        "**/.vscode": true,
+        "**/.github": true,
+        "**/.devcontainer": true,
+        "**/.husky": true
+    },
+    
+    // ** File Exclusion for File Watcher
+    "files.watcherExclude": {
+        "**/.git": true,
+        "**/node_modules": true
+    }
+}

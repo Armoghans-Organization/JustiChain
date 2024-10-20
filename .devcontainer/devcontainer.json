@@ -1,0 +1,113 @@
+// **************************************
+// * Dev Container Configuration        *
+// * Project: JustiChain                *
+// * Description: This configuration    *
+// * sets up a tailored development     *
+// * environment for Flask websites     *
+// * with essential tools and VS Code   *
+// * extensions.                        *
+// **************************************
+{
+	// * Name of the development container
+	"name": "JustiChain Development",
+
+	// ** Base Image
+	"image": "alpine:latest",
+	
+	// ** Features to add to the dev container
+	"features": {
+		// ** Git Feature for version control
+		"ghcr.io/devcontainers/features/git:1": {
+			"ppa": true,
+			"version": "latest"
+		},
+		// ** Node.js Feature for JavaScript and npm support
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "latest"
+		},
+		// ** Python Feature for Flask
+		"ghcr.io/devcontainers/features/python:3": {
+			"version": "latest"
+		}
+	},
+	
+	// ** Custom VS Code extensions
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				// === UI Customizations ===
+				
+				// * Icon themes for a personalized UI
+				"tal7aouy.icons",
+				// * Themes for visual customization
+				"ahmadawais.shades-of-purple",
+				// * UI enhancements
+				"CoenraadS.bracket-pair-colorizer-2",
+				"formulahendry.auto-rename-tag",
+				"visualstudioexptteam.vscodeintellicode",
+				"naumovs.color-highlight",
+				// * Path navigation
+				"christian-kohler.path-intellisense",
+				
+				// === Code Assistance ===
+				
+				// * AI-assisted coding
+				"TabNine.tabnine-vscode",
+				// * Code readability and comments
+				"aaron-bond.better-comments",
+				// * Error visualization
+				"usernamehw.errorlens",
+				
+				// === Flask and Python Support ===
+				
+				// * Python and Flask support
+				"ms-python.python",
+				// * Python docstring generator
+				"njpwerner.autodocstring",
+				// * Jinja template support
+				"samuelcolvin.jinjahtml",
+				// * Flask code snippets
+				"nicolasvuollmy.flask-snippets",
+				// * Python Debugging
+				"ms-python.debugpy",
+				
+				// === JavaScript and Node.js Support ===
+				
+				// * Node.js Debugging
+				"ms-vscode.node-debug2",
+				// * NPM support
+				"christian-kohler.npm-intellisense",
+				
+				// === Markdown Support ===
+				
+				// * Markdown formatting
+				"yzhang.markdown-all-in-one",
+				// * Markdown preview
+				"shd101wyy.markdown-preview-enhanced",
+				
+				// === CSS and Tailwind CSS ===
+				
+				// * Tailwind CSS Support
+				"bradlc.vscode-tailwindcss"
+			]
+		}
+	},
+	
+	// ** Ports to forward from the container to the host
+	"forwardPorts": [
+		5000
+	],
+	
+	// ** User settings for the container
+	"remoteUser": "root",
+	
+	// ** Commands to run after the container is created
+	"postCreateCommand": "npm install",
+	
+	// ** Environment variables for the container
+	"environment": {
+		"NODE_ENV": "development",
+		"FLASK_APP": "app.py",
+		"FLASK_ENV": "development"
+	}
+}
