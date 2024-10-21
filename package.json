@@ -8,6 +8,13 @@
     "postinstall": "echo '📦 Installing dependencies' pip install -r requirements.txt",
     "start": "echo '🚀 Starting Flask server' &&  flask run",
     "dev": "echo '🚀 Starting Flask development server' && flask run --debug --reload",
+    "prettier": "prettier --check --ignore-unknown .",
+    "prettier:fix": "prettier --write --ignore-unknown .",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "flake": "flake8 app.py app/ tests/ migrations/",
+    "black": "black app.py app/ tests/ migrations/",
+    "lint-staged": "npx lint-staged",
     "audit": "echo '🔍 Running npm audit' && npm audit",
     "audit:fix": "echo '🛠️ Running npm audit and fixing issues' && npm audit --fix",
     "update": "echo '🔄 Updating npm packages' && npm update",
@@ -58,9 +65,30 @@
     }
   },
   "devDependencies": {
+    "@eslint/js": "^9.13.0",
     "commitizen": "^4.3.1",
+    "commitlint": "^19.5.0",
     "cz-conventional-changelog": "^3.3.0",
-    "husky": "^9.1.6"
+    "eslint": "^9.13.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.11.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3"
+  },
+  "lint-staged": {
+    "*.js": [
+      "npm run prettier:fix",
+      "npm run lint:fix"
+    ],
+    "*.html": [
+      "npm run prettier:fix",
+      "npm run lint:fix"
+    ],
+    "*.py": [
+      "npm run flake",
+      "npm run black"
+    ]
   },
   "author": "Armoghan-ul-Mohmin",
   "license": "MIT",
