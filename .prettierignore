@@ -1,0 +1,16 @@
+# Ignore specific directories
+node_modules/*
+.github/*
+.vscode/*
+.git/*
+.devcontainer/*
+.husky/*
+
+# Ignore specific files
+package.json
+package-lock.json
+.gitignore
+.prettierrc.cjs
+.prettierignore
+eslint.config.mjs
+.flake8
