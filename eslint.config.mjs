@@ -16,6 +16,8 @@ export default [
       "**/.eslintignore",
       "**/.prettierrc.cjs",
       "**/migrations/**",
+      "**/tailwind.config.js",
+      "**/postcss.config.js",
       "**/tests/**",
     ],
   },
