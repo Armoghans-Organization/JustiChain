@@ -8,6 +8,7 @@
     "postinstall": "echo '📦 Installing dependencies' pip install -r requirements.txt",
     "start": "echo '🚀 Starting Flask server' &&  flask run",
     "dev": "echo '🚀 Starting Flask development server' && flask run --debug --reload",
+    "build": "vendor-copy ; npm run build:css ",
     "build:css": "tailwindcss build -i app/static/css/style.css -o app/static/css/styles.css",
     "build:css:prod": "NODE_ENV=production tailwindcss build -i app/static/css/style.css -o app/static/css/styles.css --minify",
     "prettier": "prettier --check --ignore-unknown .",
@@ -23,6 +24,7 @@
     "depcheck": "echo '🧐 Checking for unused dependencies' && npx depcheck",
     "cache-clean": "echo '🧹 Cleaning npm cache' && npm cache clean --force",
     "rebuild-node-modules": "echo '🔨 Rebuilding node_modules' && rm -rf node_modules && npm install",
+    "assets:clean": "rimraf app/static/assets/*",
     "commit": "clear && echo '💾 Running commitizen' && cz",
     "prepare": "echo '🎬 Preparing Husky' && husky"
   },
@@ -72,6 +74,7 @@
     "@tailwindcss/typography": "^0.5.15",
     "autoprefixer": "^10.4.20",
     "cssnano": "^7.0.6",
+    "feather-icons": "^4.29.2",
     "postcss": "^8.4.47",
     "tailwindcss": "^3.4.14"
   },
@@ -80,12 +83,15 @@
     "commitizen": "^4.3.1",
     "commitlint": "^19.5.0",
     "cz-conventional-changelog": "^3.3.0",
+    "daisyui": "^4.12.14",
     "eslint": "^9.13.0",
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.11.0",
     "husky": "^9.1.6",
     "lint-staged": "^15.2.10",
-    "prettier": "^3.3.3"
+    "prettier": "^3.3.3",
+    "rimraf": "^6.0.1",
+    "vendor-copy": "^3.0.1"
   },
   "lint-staged": {
     "*.js": [
@@ -101,6 +107,12 @@
       "npm run black"
     ]
   },
+  "vendorCopy": [
+    {
+      "from": "node_modules/feather-icons/dist/feather.js",
+      "to": "app/static/assets/feather.js"
+    }
+  ],
   "author": "Armoghan-ul-Mohmin",
   "license": "MIT",
   "repository": {
